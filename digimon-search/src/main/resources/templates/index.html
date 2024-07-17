@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pesquisa de Digimons</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Pesquisa de Digimons</h1>
+        <form action="/search" method="get">
+            <div class="form-group">
+                <label for="name">Buscar por Nome</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Digite o nome do Digimon">
+            </div>
+            <div class="form-group">
+                <label for="level">Buscar por Nível</label>
+                <select id="level" name="level" class="form-control">
+                    <option value="">Selecione o nível do Digimon</option>
+                    <option value="In Training">In Training</option>
+                    <option value="Rookie">Rookie</option>
+                    <option value="Champion">Champion</option>
+                    <option value="Ultimate">Ultimate</option>
+                    <option value="Fresh">Fresh</option>
+                    <option value="Mega">Mega</option>
+                    <option value="Training">Training</option>
+                    <option value="Armor">Armor</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
+</body>
+</html>

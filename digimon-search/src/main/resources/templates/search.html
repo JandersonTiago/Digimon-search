@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Resultados da Pesquisa</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-columns {
+            column-count: 3;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Resultados da Pesquisa</h1>
+        <div th:if="${digimons == null}">
+            <p>Nenhum resultado encontrado.</p>
+        </div>
+        <div th:if="${digimons != null}" class="card-columns">
+            <div th:each="digimon : ${digimons}" class="card">
+                <img th:src="${digimon.img}" class="card-img-top" alt="Imagem do Digimon">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${digimon.name}"></h5>
+                    <p class="card-text" th:text="'Nível: ' + ${digimon.level}"></p>
+                </div>
+            </div>
+        </div>
+        <a href="/" class="btn btn-secondary mt-3">Voltar para a Pesquisa</a>
+    </div>
+</body>
+</html>
